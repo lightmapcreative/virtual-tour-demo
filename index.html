@@ -35,11 +35,57 @@
         height: 100%;
         touch-action: none;
       }
+      #customButtons {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
+    }
+
+    #customButtons button {
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    #customButtons button:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
     </style>
   </head>
   <body oncontextmenu="return false;">
     <div id="canvasZone">
         <canvas touch-action="none" id="renderCanvas"></canvas>
+        <div id="customButtons">
+            <button id="btn1">Pulsante 1</button>
+            <button id="btn2">Pulsante 2</button>
+            <button id="btn3">Pulsante 3</button>
+        </div>
+    
+        <script>
+            document.getElementById("btn1").addEventListener("click", function() {
+                alert("Pulsante 1 cliccato!");
+                // Qui puoi mettere il codice per eseguire un'azione specifica
+            });
+    
+            document.getElementById("btn2").addEventListener("click", function() {
+                alert("Pulsante 2 cliccato!");
+                // Esegui un'altra azione
+            });
+    
+            document.getElementById("btn3").addEventListener("click", function() {
+                alert("Pulsante 3 cliccato!");
+                // Altra azione ancora
+            });
+        </script>
     </div>
 
     <script>
